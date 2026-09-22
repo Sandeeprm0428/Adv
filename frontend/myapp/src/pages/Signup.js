@@ -13,258 +13,359 @@ import { registerAdvocate } from "../data/Advocatesstore";
 import { registerClient } from "../data/Clientsstore";
 import "./Signup.css";
 
-// ── Data from JSON ────────────────────────────────────────────
+// ── Cities / Talukas grouped by District ─────────────────────
+
 const CITIES = [
-  // =========================
-  // A
-  // =========================
-  "Afzalpur",
-  "Alur",
-  "Aland",
-  "Ankola",
-  "Arakalgud",
-  "Arasikere",
-  "Athani",
-  "Aurad",
-  "Anekal",
 
-  // =========================
-  // B
-  // =========================
-  "Bagepalli",
+  // =========================================================
+  // BAGALKOT
+  // =========================================================
+
   "Bagalkot",
-  "Bailhongal",
-  "Baindur",
-  "Banahatti",
-  "Bangarapet",
-  "Bantwal",
-  "Basavana Bagewadi",
-  "Basavakalyan",
-  "Belagavi",
-  "Belthangady",
-  "Belur",
-  "Bhadravati",
-  "Bhalki",
-  "Bhatkal",
   "Bilagi",
-  "Byadgi",
-  "Bengaluru",
-  "Bengaluru Rural",
-
-  // =========================
-  // C
-  // =========================
-  "Challakere",
-  "Chamarajanagar",
-  "Channagiri",
-  "Channapatna",
-  "Channarayapatna",
-  "Chikkaballapur",
-  "Chikkamagaluru",
-  "Chikkodi",
-  "Chiknayakanhalli",
-  "Chincholi",
-  "Chintamani",
-  "Chitapur",
-  "Chitradurga",
-
-  // =========================
-  // D
-  // =========================
-  "Dandeli",
-  "Davangere",
-  "Devanahalli",
-  "Devadurga",
-  "Dharwad",
-  "Doddaballapur",
-
-  // =========================
-  // G
-  // =========================
-  "Gadag",
-  "Gangavathi",
-  "Gauribidanur",
-  "Gokak",
-  "Gudibande",
-  "Gubbi",
-  "Gundlupet",
-
-  // =========================
-  // H
-  // =========================
-  "H.D. Kote",
-  "Hagaribommanahalli",
-  "Haliyal",
-  "Hanagal",
-  "Harihar",
-  "Hassan",
-  "Haveri",
-  "Holenarasipura",
-  "Holalkere",
-  "Honnavar",
-  "Hosanagara",
-  "Hospete",
-  "Hosadurga",
-  "Hoskote",
-  "Humnabad",
-  "Hukeri",
-  "Hunsur",
   "Hungund",
-  "Hirekerur",
-
-  // =========================
-  // I
-  // =========================
-  "Ilkal",
-  "Indi",
-
-  // =========================
-  // J
-  // =========================
   "Jamkhandi",
-  "Jevargi",
-  "Jagalur",
+  "Mudhol",
 
-  // =========================
-  // K
-  // =========================
-  "Kadur",
+
+  // =========================================================
+  // BALLARI
+  // =========================================================
+
+  "Hospete",
+  "Hagaribommanahalli",
+  "Sandur",
+  "Siruguppa",
+
+
+  // =========================================================
+  // BELAGAVI
+  // =========================================================
+
+  "Athani",
+  "Bailhongal",
+  "Belagavi",
+  "Chikkodi",
+  "Gokak",
+  "Hukeri",
   "Kagwad",
-  "Kalaburagi",
-  "Kalghatgi",
-  "Kanakapura",
-  "Karwar",
-  "Karkala",
   "Khanapur",
   "Kittur",
-  "Kolar",
-  "Kollegal",
-  "Koppa",
-  "Koratagere",
-  "Krishnarajanagara",
-  "Krishnarajapete",
-  "Kundapura",
-  "Kundgol",
-  "Kumta",
-  "Kushalnagar",
-  "Kushtagi",
-  "Kudachi",
-  "Kudligi",
-  "KGF",
-
-  // =========================
-  // L
-  // =========================
-  "Lakshmeshwar",
-  "Lingasugur",
-
-  // =========================
-  // M
-  // =========================
-  "Maddur",
-  "Madikeri",
-  "Magadi",
-  "Malavalli",
-  "Malur",
-  "Manvi",
-  "Mangaluru",
-  "Mandya",
-  "Muddebihal",
-  "Mudhol",
-  "Mudigere",
-  "Mudalagi",
-  "Mundagod",
-  "Mundargi",
-  "Mulbagal",
-  "Mysuru",
-
-  // =========================
-  // N
-  // =========================
-  "Nagamangala",
-  "Nanjangud",
-  "Narasimharajapura",
-  "Navalgund",
-  "Nelamangala",
   "Nippani",
-  "Nargund",
-
-  // =========================
-  // P
-  // =========================
-  "Pandavapura",
-  "Pavagada",
-  "Periyapatna",
-  "Ponnampet",
-  "Puttur",
-
-  // =========================
-  // R
-  // =========================
   "Raibag",
-  "Raichur",
-  "Ramanagara",
   "Ramdurg",
-  "Ranebennur",
-  "Ron",
-
-  // =========================
-  // S
-  // =========================
-  "Sagara",
-  "Sakleshpur",
-  "Sandalaga",
-  "Sandur",
+  "Yaragatti",
+  "Kudachi",
   "Sankeshwar",
-  "Savanur",
-  "Sedam",
-  "Shahabad",
-  "Shahapur",
-  "Shiggaon",
-  "Shikaripura",
-  "Shivamogga",
-  "Shorapur",
-  "Shirsi",
-  "Siddapur",
+  "Sandalaga",
+
+
+  // =========================================================
+  // BENGALURU RURAL
+  // =========================================================
+
+  "Devanahalli",
+  "Doddaballapur",
+  "Hoskote",
+  "Nelamangala",
+  "Bengaluru Rural",
+
+
+  // =========================================================
+  // BENGALURU URBAN
+  // =========================================================
+
+  "Anekal",
+  "Bengaluru",
+
+
+  // =========================================================
+  // BIDAR
+  // =========================================================
+
+  "Aurad",
+  "Basavakalyan",
+  "Bhalki",
+  "Humnabad",
+
+
+  // =========================================================
+  // VIJAYAPURA
+  // =========================================================
+
+  "Basavana Bagewadi",
+  "Indi",
+  "Muddebihal",
   "Sindagi",
-  "Sindhanur",
-  "Sira",
-  "Siruguppa",
-  "Sirsi",
-  "Somwarpet",
-  "Srinivaspur",
+  "Vijayapura",
+
+
+  // =========================================================
+  // CHAMARAJANAGAR
+  // =========================================================
+
+  "Chamarajanagar",
+  "Gundlupet",
+  "Kollegal",
+
+
+  // =========================================================
+  // CHIKKABALLAPURA
+  // =========================================================
+
+  "Bagepalli",
+  "Chikkaballapur",
+  "Chintamani",
+  "Gauribidanur",
+  "Gudibande",
+
+
+  // =========================================================
+  // CHIKKAMAGALURU
+  // =========================================================
+
+  "Chikkamagaluru",
+  "Kadur",
+  "Koppa",
+  "Mudigere",
+  "Narasimharajapura",
   "Sringeri",
-  "Srirangapatna",
+  "Tarikere",
+
+
+  // =========================================================
+  // CHITRADURGA
+  // =========================================================
+
+  "Challakere",
+  "Chitradurga",
+  "Holalkere",
+  "Hosadurga",
+
+
+  // =========================================================
+  // DAKSHINA KANNADA
+  // =========================================================
+
+  "Bantwal",
+  "Belthangady",
+  "Mangaluru",
+  "Puttur",
   "Sullia",
 
-  // =========================
-  // T
-  // =========================
-  "Tarikere",
-  "Thirthahalli",
-  "Tiptur",
+
+  // =========================================================
+  // DAVANAGERE
+  // =========================================================
+
+  "Channagiri",
+  "Davangere",
+  "Harihar",
+  "Jagalur",
+
+
+  // =========================================================
+  // DHARWAD
+  // =========================================================
+
+  "Dharwad",
+  "Kalghatgi",
+  "Kundgol",
+  "Navalgund",
+
+
+  // =========================================================
+  // GADAG
+  // =========================================================
+
+  "Gadag",
+  "Lakshmeshwar",
+  "Mundargi",
+  "Nargund",
+  "Ron",
+
+
+  // =========================================================
+  // HASSAN
+  // =========================================================
+
+  "Alur",
+  "Arakalgud",
+  "Arasikere",
+  "Belur",
+  "Channarayapatna",
+  "Hassan",
+  "Holenarasipura",
+  "Sakleshpur",
+
+
+  // =========================================================
+  // HAVERI
+  // =========================================================
+
+  "Byadgi",
+  "Hanagal",
+  "Haveri",
+  "Hirekerur",
+  "Ranebennur",
+  "Savanur",
+  "Shiggaon",
+
+
+  // =========================================================
+  // KALABURAGI
+  // =========================================================
+
+  "Afzalpur",
+  "Aland",
+  "Chincholi",
+  "Chitapur",
+  "Jevargi",
+  "Kalaburagi",
+  "Sedam",
+  "Shahabad",
+
+
+  // =========================================================
+  // KODAGU
+  // =========================================================
+
+  "Madikeri",
+  "Ponnampet",
+  "Somwarpet",
+  "Virajpet",
+  "Kushalnagar",
+
+
+  // =========================================================
+  // KOLAR
+  // =========================================================
+
+  "Bangarapet",
+  "Kolar",
+  "Malur",
+  "Mulbagal",
+  "Srinivaspur",
+  "KGF",
+
+
+  // =========================================================
+  // KOPPAL
+  // =========================================================
+
+  "Gangavathi",
+  "Kushtagi",
+  "Kudligi",
+  "Yelburga",
+
+
+  // =========================================================
+  // MANDYA
+  // =========================================================
+
+  "Maddur",
+  "Malavalli",
+  "Mandya",
+  "Nagamangala",
+  "Pandavapura",
+  "Krishnarajapete",
+  "Srirangapatna",
+
+
+  // =========================================================
+  // MYSURU
+  // =========================================================
+
+  "H.D. Kote",
+  "Hunsur",
+  "Krishnarajanagara",
+  "Mysuru",
+  "Nanjangud",
+  "Periyapatna",
   "Tirumakudalu Narasipura",
+
+
+  // =========================================================
+  // RAICHUR
+  // =========================================================
+
+  "Devadurga",
+  "Lingasugur",
+  "Manvi",
+  "Raichur",
+  "Sindhanur",
+
+
+  // =========================================================
+  // RAMANAGARA
+  // =========================================================
+
+  "Channapatna",
+  "Kanakapura",
+  "Magadi",
+  "Ramanagara",
+
+
+  // =========================================================
+  // SHIVAMOGGA
+  // =========================================================
+
+  "Bhadravati",
+  "Hosanagara",
+  "Sagara",
+  "Shikaripura",
+  "Shivamogga",
+  "Thirthahalli",
+
+
+  // =========================================================
+  // TUMAKURU
+  // =========================================================
+
+  "Chiknayakanhalli",
+  "Gubbi",
+  "Koratagere",
+  "Pavagada",
+  "Sira",
+  "Tiptur",
   "Tumakuru",
   "Turuvekere",
 
-  // =========================
-  // U
-  // =========================
+
+  // =========================================================
+  // UDUPI
+  // =========================================================
+
+  "Karkala",
+  "Kundapura",
   "Udupi",
 
-  // =========================
-  // V
-  // =========================
-  "Vijayapura",
-  "Virajpet",
 
-  // =========================
-  // Y
-  // =========================
-  "Yadgir",
-  "Yaragatti",
+  // =========================================================
+  // UTTARA KANNADA
+  // =========================================================
+
+  "Ankola",
+  "Bhatkal",
+  "Dandeli",
+  "Haliyal",
+  "Honnavar",
+  "Karwar",
+  "Kumta",
+  "Mundagod",
+  "Shirsi",
+  "Siddapur",
   "Yellapur",
-  "Yelburga"
+
+
+  // =========================================================
+  // YADGIR
+  // =========================================================
+
+  "Shahapur",
+  "Shorapur",
+  "Yadgir"
+
 ];
 
 const PRACTICE_AREAS = [
@@ -276,16 +377,10 @@ const PRACTICE_AREAS = [
 
 const COURTS = [
   "District Court","High Court","Supreme Court",
-  "Family Court","Consumer Forum","Labour Court",
-  "Civil Court","Criminal Court","Revenue Court",
 ];
 
 const BAR_COUNCILS = [
   "Bar Council of India","Bar Council of Karnataka",
-  "Bar Council of Maharashtra","Bar Council of Delhi",
-  "Bar Council of Tamil Nadu","Bar Council of Telangana",
-  "Bar Council of Kerala","Bar Council of Gujarat",
-  "Bar Council of Rajasthan","Bar Council of UP",
 ];
 
 const EXPERIENCE_YEARS = [
